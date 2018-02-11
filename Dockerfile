@@ -1,10 +1,15 @@
 FROM centos:latest
 
-RUN yum -y install ca-certificates python3
+RUN yum -y update
+RUN yum -y install ca-certificates yum-utils
+RUN yum -y groupinstall development
+RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+RUN yum -y install python36u
+RUN yum -y install python36u-pip
 
 ENV SPEEDTEST_VERSION 1.0.2
 
-RUN curl https://bootstrap.pypa.io/get-pip.py | python
+#RUN curl https://bootstrap.pypa.io/get-pip.py | python
 
 RUN pip install speedtest-cli==$SPEEDTEST_VERSION
 
