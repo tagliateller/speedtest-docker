@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM rhel7:7.4-113
 
 RUN yum -y update
 RUN yum -y install ca-certificates yum-utils
