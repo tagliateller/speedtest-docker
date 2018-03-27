@@ -9,6 +9,10 @@ RUN yum -y install python36u
 RUN yum -y install python36u-pip
 
 ENV SPEEDTEST_VERSION 1.0.2
+ENV HTTP_PROXY http://10.50.8.52:8080/
+ENV http_proxy http://10.50.8.52:8080/
+ENV HTTPS_PROXY http://10.50.8.52:8080/
+ENV https_proxy http://10.50.8.52:8080/
 
 #RUN curl https://bootstrap.pypa.io/get-pip.py | python
 
