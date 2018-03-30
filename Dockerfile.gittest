@@ -1,0 +1,10 @@
+FROM maven:3.5.3-jdk-8-alpine
+
+#RUN yum -y update
+#RUN yum -y install git
+RUN apk update && apk upgrade && apk add --no-cache git
+
+COPY docker-entrypoint-gittest.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint-gittest.sh"]
+
+CMD ["docker-entrypoint-gittest.sh"]
